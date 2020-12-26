@@ -40,6 +40,11 @@ namespace OnlineShoppingBUS
             return result;
         }
 
+        public DataTable GetHistoryOfOrder(string maKhachHang)
+        {
+            return OnlineShoppingDAO.DonDatHangDAO.Instance.GetHistoryOfOrder(maKhachHang);
+        }
+
         public void AddProductToOrder(int maDon, int maHangHoa, int soLuongDat)
         {
             OnlineShoppingDAO.DonDatHangDAO.Instance.AddProductToOrder(maDon, maHangHoa, soLuongDat);

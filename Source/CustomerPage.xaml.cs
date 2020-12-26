@@ -115,5 +115,11 @@ namespace Online_Shopping
                 }
             }
         }
+
+        private void OrderListButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderHistoryWindow orderList = new OrderHistoryWindow(1);
+            orderList.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,41 @@
+﻿<Window x:Class="Online_Shopping.OrderHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:Online_Shopping"
+        mc:Ignorable="d" 
+        Height="500" Width="800"
+        Title="Lịch sử đơn hàng" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Margin="0,0,-72,-53">
+        <DataGrid x:Name="ddGHistory" 
+                  ItemsSource="{Binding}" Height="470" 
+                  Margin="0,0,72.6,0" VerticalAlignment="Top" 
+                  HeadersVisibility="Column"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã đơn hàng"
+                                    Binding="{Binding MaDon}"
+                                    Width="1*"/>
+                <DataGridTextColumn Header="Ngày lập đơn"
+                                    Binding="{Binding NgayLapDon}"
+                                    Width="1*"/>
+                <DataGridTextColumn Header="Ngày giao hàng"
+                                    Binding="{Binding NgayGiaoHangDuKien}"
+                                    Width="1*"/>
+                <DataGridTextColumn Header="Thanh toán"
+                                    Binding="{Binding PhuongThucThanhToan}"
+                                    Width="1*"/>
+                <DataGridTextColumn Header="Tình trạng"
+                                    Binding="{Binding TinhTrangDonHang}"
+                                    Width="1*"/>
+                <DataGridTextColumn Header="Tổng tiền"
+                                    Binding="{Binding TongTien}"
+                                    Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

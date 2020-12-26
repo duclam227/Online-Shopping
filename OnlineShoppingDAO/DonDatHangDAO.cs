@@ -48,6 +48,19 @@ namespace OnlineShoppingDAO
             return db;
         }
 
+        public DataTable GetHistoryOfOrder(string maKhachHang)
+        {
+            string query = "SELECT * FROM DonDatHang";
+            if (!string.IsNullOrEmpty(maKhachHang.Trim()))
+            {
+                query += " WHERE MaKhachHang= " + maKhachHang;
+            }
+            DataTable db = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _conn);
+            adapter.Fill(db);
+            return db;
+        }
+
         public void AddProductToOrder(int maDon, int maHangHoa, int soLuongDat)
         {
             string query = $"insert into ThongTinDatHang(MaHangHoa, MaDon, SoLuongDat) values({maHangHoa}, {maDon}, {soLuongDat})";

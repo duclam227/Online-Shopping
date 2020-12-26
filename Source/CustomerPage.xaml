@@ -94,6 +94,17 @@
             </DataGrid>
         </Border>
 
+        <Button Content="Xem lịch sử đặt"
+                Name="OrderListButton"
+                Width="100"
+                Height="30"
+                Style="{StaticResource ButtonPrimary}"
+                hc:BorderElement.CornerRadius="15" 
+                Click="OrderListButton_Click"
+                Grid.Column="1"
+                Grid.Row="3"
+                HorizontalAlignment="Left"/>
+        
         <StackPanel Grid.Row="3"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
